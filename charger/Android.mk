@@ -1,13 +1,8 @@
 ifneq ($(TARGET_NO_CHARGER),true)
 LOCAL_PATH := $(call my-dir)
 
-ifneq (,$(PRODUCT_AAPT_PREF_CONFIG))
-# If PRODUCT_AAPT_PREF_CONFIG includes a dpi bucket, then use that value.
-charger_density := $(word 1,$(PRODUCT_AAPT_PREF_CONFIG))
-else
-# Otherwise, use the default medium density.
+# Use the default medium density.
 charger_density := 480dpi
-endif
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := font_charger.png
